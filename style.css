@@ -1,4 +1,50 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
 section{
     display: grid;
     grid-template-rows: auto auto;
 }
+article{
+    font-size: 60px;
+    width: 250px;
+    text-align: center;
+    background-color: whitesmoke;
+    color: grey;
+    border-radius: 50px 50px;
+    z-index:99;
+    border-left: 3px solid #d3d3d3;
+    border-right: 3px solid #d3d3d3;
+}
+.jour, .annee{
+    color: whitesmoke;
+    background-color: #b03737;
+    z-index:1;
+}
+.jour{
+    border-top-left-radius: 50px 50px;
+    border-top-right-radius: 50px 50px;
+    border-top: 3px solid #912c2c;
+    border-right: 3px solid #912c2c;
+    border-left: 3px solid #912c2c;
+}
+.nombre, .mois{
+    height: 20px;
+    margin-bottom: 20px;
+    color: #909090;    
+}
+.nombre{
+    margin-top: -50px;
+}
+.mois{
+    color: #7c7c7c;
+    text-transform: uppercase;
+}
+.annee{
+    border-bottom-left-radius: 50px 50px;
+    border-bottom-right-radius: 50px 50px;
+    border-bottom: 3px solid #912c2c;
+    border-left: 3px solid #912c2c;
+    border-right: 3px solid #912c2c;
+}
+

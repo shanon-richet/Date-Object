@@ -40,7 +40,6 @@ timestamp.appendChild(elapsedTime)
 
 // Exercice 3
 
-
 const dateIn8000Hours= document.createElement('p')
 const add8000Hours= now.getTime() + (8000 * 1000 * 60 * 60)
 
@@ -48,6 +47,43 @@ const timeIn8000Hours= new Date(add8000Hours)
 
 dateIn8000Hours.innerHTML= 'We are ' + now.toLocaleDateString() + ' In 8000 hours it will be ' + timeIn8000Hours.toLocaleDateString();
 timestamp.appendChild(dateIn8000Hours)
+
+// Exercice 4
+
+const footer= document.querySelector('footer')
+
+var p1= document.createElement('p')
+p1.setAttribute('class', 'jour')
+const jour= now.toDateString().slice(0,4)
+p1.innerHTML= jour;
+
+var p2= document.createElement('p')
+p2.setAttribute('class', 'nombre')
+const nombre= now.toDateString().slice(7,10)
+p2.innerHTML= nombre;
+
+var p3= document.createElement('p')
+p3.setAttribute('class', 'mois')
+const mois= now.toDateString().slice(4,7)
+p3.innerHTML= mois;
+
+var p4= document.createElement('p')
+p4.setAttribute('class', 'annee')
+const annee= now.toDateString().slice(10, 15)
+p4.innerHTML= annee;
+
+const article= document.createElement('article')
+article.appendChild(p1)
+article.appendChild(p2)
+article.appendChild(p3)
+article.appendChild(p4)
+footer.appendChild(article)
+
+
+
+
+
+
 
 
 
