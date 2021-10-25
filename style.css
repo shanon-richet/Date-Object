@@ -1,13 +1,26 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+main{
+    display:grid;
+    grid-template-columns: auto auto;
+}
 section{
     display: grid;
     grid-template-rows: auto auto;
 }
+footer{
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+    display:grid;
+    grid-template-columns: auto auto;
+}
 article{
     font-size: 60px;
+}
+.calendrier{
     width: 250px;
+    height: 320px;
     text-align: center;
     background-color: whitesmoke;
     color: grey;
@@ -15,6 +28,9 @@ article{
     z-index:99;
     border-left: 3px solid #d3d3d3;
     border-right: 3px solid #d3d3d3;
+}
+.horloge{
+   color: #474747;
 }
 .jour, .annee{
     color: whitesmoke;
@@ -27,6 +43,7 @@ article{
     border-top: 3px solid #912c2c;
     border-right: 3px solid #912c2c;
     border-left: 3px solid #912c2c;
+    margin-top: -10px;
 }
 .nombre, .mois{
     height: 20px;
@@ -34,7 +51,7 @@ article{
     color: #909090;    
 }
 .nombre{
-    margin-top: -50px;
+    margin-top: -60px;
 }
 .mois{
     color: #7c7c7c;
@@ -46,5 +63,8 @@ article{
     border-bottom: 3px solid #912c2c;
     border-left: 3px solid #912c2c;
     border-right: 3px solid #912c2c;
+}
+.temps_écoulé{
+    width: 300px;
 }
 
