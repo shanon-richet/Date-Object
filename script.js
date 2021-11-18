@@ -78,31 +78,43 @@ calendrier.appendChild(p4)
 footer.appendChild(calendrier)
 
 // Horloge 
-
 const horloge= document.createElement('article');
-horloge.setAttribute('class', 'horloge')
-var p5= document.createElement('p')
-var heures= now.toLocaleTimeString().slice(0, 2)
-var minutes= now.toLocaleTimeString().slice(2, 5)
-var secondes= now.toLocaleTimeString().slice(5, 8)
-const time= heures + minutes + secondes;
-p5.innerHTML= time;
-
+var p5= document.createElement('section')
 horloge.appendChild(p5)
-footer.appendChild(horloge)
+    footer.appendChild(horloge)
+setInterval(() => {
+    let now= new Date()
+    
+    horloge.setAttribute('class', 'horloge')
+    let heures= now.getHours();
+    let minutes= now.getMinutes();
+    let secondes= now.getSeconds();
+    if(heures < 10){heures= "0" + heures}
+    if(minutes < 10){minutes= "0" + minutes}    
+    if(secondes < 10){secondes= "0" + secondes}
+
+    p5.innerHTML= heures+ ':' +minutes + ':' + secondes;
+
+}, 1000);
 
 // Find Timestamp of a given date
-
+countElapsed();
+const reponse= document.querySelector('.reponse')
+function countElapsed(){
 const main= document.querySelector('main')
-const dateReponse= document.createElement('input')
-dateReponse.value= "July 1, 1999";
-dateReponse.placeholder= 'July 1, 1999'
+const reponse= document.createElement('input')
+reponse.setAttribute('class', 'reponse');
+reponse.type= "date"
+reponse.defaultValue = '2000-03-03'
 
-let y = new Date(dateReponse.value)
+    reponse.value;
+
+let y = new Date(reponse.value)
 
 let tempsPassé= Math.floor((now.getTime()-y.getTime())/ 1000);
 const tempsEcoulé= document.createElement('p')
 tempsEcoulé.setAttribute('class', 'temps_écoulé')
+
 if (tempsPassé < 24 * 60 * 60){
     tempsEcoulé.innerHTML= "Nous sommes " + now.toLocaleDateString() + ' ' + Math.floor(tempsPassé/24 /60 /60) + ' ' + "jours sont passés depuis" + ' ' + y.toLocaleDateString();
 }
@@ -113,31 +125,9 @@ if (tempsPassé > 356 * 24 * 60 * 60){
     tempsEcoulé.innerHTML= "Nous sommes " + now.toLocaleDateString() + ' ' + Math.floor(tempsPassé/365 /24 /60 /60) + ' ' + "années sont passées depuis" + ' ' + y.toLocaleDateString();
 }
 
-tableauDuTemps= [
-    {
-        name: 'semaine',
-        value: 1000 * 60 * 60 * 24 * 7
-    },
-    {
-        name: 'day',
-        value: 1000 * 60 * 60 * 24
-    },
-    {
-        name: 'hour',
-        value: 1000 * 60 * 60
-    },
-    {
-        name: 'minute', 
-        value: 1000 * 60
-    },
-    {
-        name: 'second',
-        value: 1000
-    }
-]
+main.appendChild(reponse)
 main.appendChild(tempsEcoulé)
-main.appendChild(dateReponse)
-
+}
 
 
 
